@@ -27,6 +27,11 @@
       "name": "java",
       "phone": "+5555555",
       "id": 1
+    },
+    {
+      "name": "Goncharova",
+      "phone": "+375297279364",
+      "id": 2
     }
   ]
 }
