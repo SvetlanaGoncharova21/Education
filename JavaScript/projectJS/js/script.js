@@ -370,7 +370,7 @@ window.addEventListener("DOMContentLoaded", function () {
     current = document.querySelector("#current"),
     slidesWrapper = document.querySelector(".offer__slider-wrapper"),
     slidesField = document.querySelector(".offer__slider-inner"),
-    width = window.getComputedStyle(slideWrapper).width,
+    width = window.getComputedStyle(slidesWrapper).width,
     slider = document.querySelector(".offer__slider");
 
   let slideIndex = 1;
