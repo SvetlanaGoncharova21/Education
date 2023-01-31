@@ -555,7 +555,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   initLocalSettings("#gender div", "calculating__choose-item_active");
   initLocalSettings(
-    ".calculating_choose_big div",
+    ".calculating__choose_big div",
     "calculating__choose-item_active"
   );
 
@@ -605,4 +605,39 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   getStaticInformation("#gender", "calculating__choose-item_active");
+
+  getStaticInformation(
+    ".calculating__choose_big",
+    "calculating__choose-item_active"
+  );
+
+  // input
+  function getDynamicInformation(selector) {
+    const input = document.querySelector(selector);
+
+    input.addEventListener("input", () => {
+      if (input.value.match(/\D/g)) {
+        input.style.border = "2px solid red";
+      } else {
+        input.style.border = "none";
+      }
+
+      switch (input.getAttribute("id")) {
+        case "height":
+          height = +input.value;
+          break;
+        case "weight":
+          weight = +input.value;
+          break;
+        case "age":
+          age = +input.value;
+          break;
+      }
+      calcTotal();
+    });
+  }
+
+  getDynamicInformation("#height");
+  getDynamicInformation("#weight");
+  getDynamicInformation("#age");
 });
