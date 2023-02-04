@@ -36,7 +36,7 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const deadline = "2023-02-01";
+  const deadline = "2023-03-01";
 
   function getTimeRemaining(endtime) {
     const t = Date.parse(endtime) - Date.parse(new Date()),
@@ -74,13 +74,18 @@ window.addEventListener("DOMContentLoaded", function () {
 
     function updateClock() {
       const t = getTimeRemaining(endtime);
-      days.innerHTML = getZero(t.days);
-      hours.innerHTML = getZero(t.hours);
-      minutes.innerHTML = getZero(t.minutes);
-      seconds.innerHTML = getZero(t.seconds);
 
       if (t.total <= 0) {
         clearInterval(timeInterval);
+        days.innerHTML = getZero(0);
+        hours.innerHTML = getZero(0);
+        minutes.innerHTML = getZero(0);
+        seconds.innerHTML = getZero(0);
+      } else {
+        days.innerHTML = getZero(t.days);
+        hours.innerHTML = getZero(t.hours);
+        minutes.innerHTML = getZero(t.minutes);
+        seconds.innerHTML = getZero(t.seconds);
       }
     }
   }
